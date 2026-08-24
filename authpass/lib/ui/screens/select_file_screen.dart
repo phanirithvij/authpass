@@ -342,22 +342,10 @@ class _SelectFileWidgetState extends State<SelectFileWidget>
                         ),
                       ),
                       LinkButton(
-                        icon: const Icon(Icons.content_copy),
-                        onPressed: () async {
-                          await Clipboard.setData(
-                            const ClipboardData(text: _linuxAppArmorCommand),
-                          );
-                          ScaffoldMessenger.of(context)
-                            ..hideCurrentSnackBar()
-                            ..showSnackBar(
-                              SnackBar(
-                                content: Text(loc.copiedToClipboard),
-                              ),
-                            );
-                          await _linuxAppArmorCheck();
-                        },
+                        icon: const Icon(Icons.info_outline),
+                        onPressed: () {},
                         child: const Text(
-                          _linuxAppArmorCommand,
+                          'gnome-keyring or kwallet is required',
                           style: TextStyle(
                             fontFamily: AuthPassTheme.monoFontFamily,
                           ),
